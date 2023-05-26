@@ -1,0 +1,233 @@
+####################################            I3 CONIFG FILE                  ########################################
+####################################            I3 CONIFG FILE                  ########################################
+####################################            I3 CONIFG FILE                  ########################################
+####################################            I3 CONIFG FILE                  ########################################
+####################################            I3 CONIFG FILE                  ########################################
+####################################            I3 CONIFG FILE                  ########################################
+####################################            I3 CONIFG FILE                  ########################################
+####################################            I3 CONIFG FILE                  ########################################
+####################################            I3 CONIFG FILE                  ########################################
+
+
+
+
+
+
+
+
+####################################            BASIC                  ########################################
+
+set $mod Mod4
+floating_modifier $mod
+bindsym Mod1+q kill
+bindsym $mod+d exec --no-startup-id dmenu_run
+font pango:monospace 3
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork   					
+exec --no-startup-id nm-applet
+
+
+
+####################################            AUDIO                  ########################################
+
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+
+####################################            PICOM                  ########################################
+
+exec  --no-startup-id  picom --experimental-backends -b --config ~/.config/picom/picom.conf
+
+####################################            SCREENSHOT                  ########################################
+
+bindsym Print exec --no-startup-id maim --format=png "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-all.png"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
+
+
+####################################            GAPS                  ########################################
+
+gaps inner 60px
+gaps outer 8px
+####################################            FOCUS                  ########################################
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+####################################            BRIGHTNESSS                  ########################################
+
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A  20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 20 # decrease screen brightness
+
+
+####################################            LAYOUT                  ########################################
+bindsym $mod+v split v
+bindsym $mod+f fullscreen toggle
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+
+##################################           WORKSPACE          ####################################
+
+
+
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+bindsym $mod+Tab workspace back_and_forth 
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+
+
+
+
+
+
+############################            RELOAD,EXIT,RESTART        ################################
+
+
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# class                 border  backgr. text    indicator child_border
+client.focused          #FFD700 FFD700 ffffff 2e9ef4     #FFD700
+client.focused_inactive #ffffff #5f676a #ffffff #484e50   #ffffff
+client.unfocused        #FFD700 #000000 #888888 #292d2e   #000022
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+for_window [class="^.*"] border pixel 1
+
+
+
+
+
+####################################            RESIZE                  ########################################
+
+
+
+
+
+
+
+bindsym $mod+r mode "resize"
+mode "resize" {
+        
+        bindsym semicolon resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym j resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+
+
+
+
+
+####################################            POLYBAR                  ########################################
+
+
+
+
+
+exec --no-startup-id $HOME/.config/polybar/launch.sh
+for_window [class="polybar"] border pixel 0
+for_window [class="polybar"] gaps inner current set 0
+
+
+
+
+####################################            SHORTCUTS                  ########################################
+
+
+
+
+
+
+bindsym Mod1+t exec alacritty
+bindsym Mod1+d exec nemo ~
+bindsym Mod1+o exec 
+bindsym Mod1+c exec google-chrome-stable --enable-features=WebUIDarkMode --force-dark-mode
+bindsym Mod1+p exec google-chrome-stable --enable-features=WebUIDarkMode --force-dark-mode www.poe.com
+bindsym Mod1+y exec google-chrome-stable --enable-features=WebUIDarkMode --force-dark-mode www.youtube.com
+bindsym Mod1+ny exec google-chrome-stable --enable-features=WebUIDarkMode --force-dark-mode www.notion.com
+
+
+
+
+
+####################################            CHANGE THE LANG                  ########################################
+
+
+
+
+
+exec  --no-startup-id "setxkbmap -model pc104 -layout us,ara -variant ,, -option grp:alt_shift_toggle"
+
+
+
+
+
+####################################            CHANGE THE WALLPAPER                  ########################################
+
+
+
+
+
+exec --no-startup-id "feh --bg-scale Pictures/wallpapers/road/lina-white-Lpqvx9wq_C4-unsplash.jpg"
+
+
+
+
