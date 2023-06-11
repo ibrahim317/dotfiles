@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#!/usr/bin/env bash
 
 SDIR="$HOME/.config/polybar/hack/scripts"
 

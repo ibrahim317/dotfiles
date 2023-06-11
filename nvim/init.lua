@@ -83,7 +83,6 @@ require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
   'xiyaowong/transparent.nvim',
-
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
@@ -215,6 +214,11 @@ require('lazy').setup({
   --{ import = 'custom.plugins' },
 }, {})
 
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+
+-- empty setup using defaults
+
 ----------------------------------------- [[ Setting options ]] ----------------------------------------
 ----------------------------------------- [[ Setting options ]] ----------------------------------------
 ----------------------------------------- [[ Setting options ]] ----------------------------------------
@@ -288,12 +292,12 @@ vim.api.nvim_set_keymap('i', '<C-s>', '<ESC>:write<CR>', {noremap = true})
 -- quit insert mode by "jj"
 vim.api.nvim_set_keymap('i', 'jj', '<Esc>', {noremap = true})
 -- quit neovim by Ctrl+q
-vim.api.nvim_set_keymap('n', '<C-q>', ':quit<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', 'q', ':quit<CR>', {noremap = true})
 -- moving one word and to the begin and to the end of line.
 vim.api.nvim_set_keymap('n', '<C-l>', 'w', {noremap = true})
 vim.api.nvim_set_keymap('n', '<C-h>', 'b', {noremap = true})
 vim.api.nvim_set_keymap('i', '<C-l>', '<C-o>w', {noremap = true})
-vim.api.nvim_set_keymap('i', '<C-h>', '<C-o>b', {noremap = true})
+vim.api.nvim_set_keymap('i', '<C-h>', '<ESC>b', {noremap = true})
 vim.api.nvim_set_keymap('n', '<M-h>', '0', {noremap = true})
 vim.api.nvim_set_keymap('n', '<M-l>', '$', {noremap = true})
 vim.api.nvim_set_keymap('i', '<M-l>', '<ESC>$a', {noremap = true})
