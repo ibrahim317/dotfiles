@@ -2,17 +2,18 @@
 ####################################            I3 CONIFG FILE                  ########################################
 ####################################            I3 CONIFG FILE                  ########################################
 ####################################            I3 CONIFG FILE                  ########################################
+####################################            I3 CONIFG FILE                  #######################################
 ####################################            I3 CONIFG FILE                  ########################################
 ####################################            I3 CONIFG FILE                  ########################################
 ####################################            I3 CONIFG FILE                  ########################################
 ####################################            I3 CONIFG FILE                  ########################################
-####################################            I3 CONIFG FILE                  ########################################
 
 
 
 
 
 
+bindsym $mod+Shift+q mode "$mode_system"
 
 
 ####################################            BASIC                  ########################################
@@ -20,7 +21,6 @@
 set $mod Mod4
 floating_modifier $mod
 bindsym Mod1+q kill
-bindsym $mod+d exec --no-startup-id dmenu_run
 font pango:monospace 3
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork   					
@@ -39,18 +39,20 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 ####################################            PICOM                  ########################################
 
-exec  --no-startup-id  picom --experimental-backends -b --config ~/.config/picom/picom.conf
+exec  --no-startup-id  picom --config ~/.config/picom/picom.conf
 
 ####################################            SCREENSHOT                  ########################################
 
-bindsym Print exec --no-startup-id maim --format=png "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-all.png"
-bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
+bindsym Print exec --no-startup-id maim --format=png "/home/$USER/Pictures/screenshots/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-all.png"
 
 
 ####################################            GAPS                  ########################################
-
-gaps inner 60px
-gaps outer 8px
+ gaps inner 9px
+ gaps outer 9px
+bindsym $mod+minus gaps inner current plus 5
+bindsym $mod+plus gaps inner current minus 5
+bindsym $mod+Shift+minus gaps outer current plus 5
+bindsym $mod+Shift+plus gaps outer current minus 5
 ####################################            FOCUS                  ########################################
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -60,10 +62,10 @@ bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h move left 50px
+bindsym $mod+Shift+j move down 50px
+bindsym $mod+Shift+k move up 50px
+bindsym $mod+Shift+l move right 50px 
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -79,7 +81,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 20 # decrease screen
 bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+# bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
@@ -135,13 +137,16 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-# class                 border  backgr. text    indicator child_border
-client.focused          #FFD700 FFD700 ffffff 2e9ef4     #FFD700
-client.focused_inactive #ffffff #5f676a #ffffff #484e50   #ffffff
-client.unfocused        #FFD700 #000000 #888888 #292d2e   #000022
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-for_window [class="^.*"] border pixel 1
+    # Window color settings
+    # class                 border  backgr. text    indicator
+    client.focused          #81a1c1 #81a1c1 #ffffff #81a1c1
+    client.unfocused        #2e3440 #1f222d #888888 #1f222d
+    client.focused_inactive #2e3440 #1f222d #888888 #1f222d
+    client.placeholder      #2e3440 #1f222d #888888 #1f222d
+    client.urgent           #900000 #900000 #ffffff #900000
+
+    client.background       #242424
+for_window [class="^.*"] border pixel 0 
 
 
 
@@ -152,41 +157,46 @@ for_window [class="^.*"] border pixel 1
 
 
 
-
-
-
-bindsym $mod+r mode "resize"
-mode "resize" {
-        
-        bindsym semicolon resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym j resize grow width 10 px or 10 ppt
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
-
-
-
-
+bindsym $mod+Mod1+h resize shrink width 10 px or 10 ppt
+bindsym $mod+Mod1+k resize grow height 10 px or 10 ppt
+bindsym $mod+Mod1+j resize shrink height 10 px or 10 ppt
+bindsym $mod+Mod1+l resize grow width 10 px or 10 ppt
 
 
 ####################################            POLYBAR                  ########################################
 
-
-
-
-
-exec --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id /home/ibrahim/.config/polybar/launch.sh --hack 
+bindsym $mod+Shift+b exec --no-startup-id pkill polybar ||/home/ibrahim/.config/polybar/launch.sh  --hack
 for_window [class="polybar"] border pixel 0
 for_window [class="polybar"] gaps inner current set 0
 
+####################################           I3-BAR                  ########################################
+#bar {
+   # height 25
+   ## position top
+    #font pango:OperatorMono Nerd Font 13
+    #status_command i3status
+    #tray_padding 2
+    #separator_symbol "  "
+    #strip_workspace_numbers yes
+    #colors {
+    #        separator  #1f222d
+    #        background #1f222d
+    #        statusline #81a1c1
 
+            #                   border  background text
+     #       focused_workspace  #1f222d #1f222d    #81a1c1
+      #      active_workspace   #1f222d #252936    #5e81ac
+       #     inactive_workspace #1f222d #1f222d    #4c566a
+        #    urgent_workspace   #1f222d #1f222d    #ee829f
+         #   binding_mode       #1f222d #81a1c1    #2e3440 } }
+
+# bar toggle, hide or show
+bindsym $mod+b bar mode toggle
+
+bindsym $mod+i bar mode invisible
+#####################################           DMENU
+bindsym $mod+d exec --no-startup-id dmenu_run -i -nb '#1f222d' -nf '#81a1c1' -sb '#81a1c1' -sf '#1f222d' -fn 'OperatorMonoBook:bold:pixelsize=18'
 
 
 ####################################            SHORTCUTS                  ########################################
@@ -195,14 +205,17 @@ for_window [class="polybar"] gaps inner current set 0
 
 
 
-
-bindsym Mod1+t exec alacritty
+bindsym Mod1+w exec rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/material/scripts/rofi/launcher.rasi
+bindsym Mod1+F4 exec .config/polybar/hack/scripts/powermenu.sh
+bindsym Mod1+t exec alacritty 
 bindsym Mod1+d exec nemo ~
-bindsym Mod1+o exec 
+bindsym Mod1+o exec QT_QPA_PLATFORMTHEME=gtk2 okular
+bindsym Mod1+r exec alacritty -e ranger 
 bindsym Mod1+c exec google-chrome-stable --enable-features=WebUIDarkMode --force-dark-mode
 bindsym Mod1+p exec google-chrome-stable --enable-features=WebUIDarkMode --force-dark-mode www.poe.com
 bindsym Mod1+y exec google-chrome-stable --enable-features=WebUIDarkMode --force-dark-mode www.youtube.com
-bindsym Mod1+ny exec google-chrome-stable --enable-features=WebUIDarkMode --force-dark-mode www.notion.com
+bindsym Mod1+n exec google-chrome-stable --enable-features=WebUIDarkMode --force-dark-mode www.notion.com
+bindsym Mod1+l exec google-chrome-stable --enable-features=WebUIDarkMode --force-dark-mode https://web.telegram.org/a/
 
 
 
@@ -223,10 +236,7 @@ exec  --no-startup-id "setxkbmap -model pc104 -layout us,ara -variant ,, -option
 ####################################            CHANGE THE WALLPAPER                  ########################################
 
 
-
-
-
-exec --no-startup-id "feh --bg-scale Pictures/wallpapers/road/lina-white-Lpqvx9wq_C4-unsplash.jpg"
+exec --no-startup-id "feh --bg-scale ~/Pictures/wallpapers/abstract/wallhaven-ex9gwo_1920x1080.png"
 
 
 
