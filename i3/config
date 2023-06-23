@@ -36,7 +36,9 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-
+#exec_always --no-startup-id ~/Documents/myScripts/gereting.sh
+bindsym  $mod+a exec ~/Documents/myScripts/aiAssistant.sh 
+bindsym $mod+Shift+a exec killall mpv
 ####################################            PICOM                  ########################################
 
 exec  --no-startup-id  picom --config ~/.config/picom/picom.conf
@@ -44,8 +46,7 @@ exec  --no-startup-id  picom --config ~/.config/picom/picom.conf
 ####################################            SCREENSHOT                  ########################################
 
 bindsym Print exec --no-startup-id maim --format=png "/home/$USER/Pictures/screenshots/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-all.png"
-
-
+bindsym $mod+Print exec --no-startup-id ~/Documents/myScripts/editScreenShoot.sh
 ####################################            GAPS                  ########################################
  gaps inner 9px
  gaps outer 9px
@@ -79,7 +80,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 20 # decrease screen
 
 ####################################            LAYOUT                  ########################################
 bindsym $mod+v split v
-bindsym $mod+f fullscreen toggle
+bindsym $mod+f fullscreen toggle 
 bindsym $mod+s layout stacking
 # bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
@@ -211,11 +212,12 @@ bindsym Mod1+t exec alacritty
 bindsym Mod1+d exec nemo ~
 bindsym Mod1+o exec QT_QPA_PLATFORMTHEME=gtk2 okular
 bindsym Mod1+r exec alacritty -e ranger 
-bindsym Mod1+c exec google-chrome-stable --enable-features=WebUIDarkMode --force-dark-mode
-bindsym Mod1+p exec google-chrome-stable --enable-features=WebUIDarkMode --force-dark-mode www.poe.com
-bindsym Mod1+y exec google-chrome-stable --enable-features=WebUIDarkMode --force-dark-mode www.youtube.com
-bindsym Mod1+n exec google-chrome-stable --enable-features=WebUIDarkMode --force-dark-mode www.notion.com
-bindsym Mod1+l exec google-chrome-stable --enable-features=WebUIDarkMode --force-dark-mode https://web.telegram.org/a/
+bindsym Mod1+c exec firefox 
+
+bindsym Mod1+p exec  ~/Documents/myScripts/openPoeInTermainal.sh
+bindsym Mod1+y exec  firefox www.youtube.com
+bindsym Mod1+n exec  firefox www.notion.com
+bindsym Mod1+l exec  firefox https://web.telegram.org/a/
 
 
 
@@ -236,8 +238,7 @@ exec  --no-startup-id "setxkbmap -model pc104 -layout us,ara -variant ,, -option
 ####################################            CHANGE THE WALLPAPER                  ########################################
 
 
-exec --no-startup-id "feh --bg-scale ~/Pictures/wallpapers/abstract/wallhaven-ex9gwo_1920x1080.png"
-
-
+exec_always --no-startup-id ~/Documents/myScripts/wallpaperThings/removeFavoFiles.sh 
+exec --no-startup-id ~/Documents/myScripts/wallpaperThings/walchanger.sh
 
 

@@ -1,0 +1,1 @@
+curl -X POST -u "apikey:aEcpBLxlIcOVDmQJlinZWn2FJsO0Q5ij7eDf9cIrMfyx" --header "Content-Type: application/json" --header "Accept: audio/wav" --data @ex.json --output /home/ibrahim/Sounds/hello_world.wav "https://api.eu-gb.text-to-speech.watson.cloud.ibm.com/instances/fca7240a-3d87-4862-b800-670af50bf4b4/v1/synthesize" && mpv /home/ibrahim/Sounds/hello_world.wav 
