@@ -1,0 +1,6 @@
+unblock
+sudo rfkill unblock bluetooth
+
+
+
+sudo rfkill block bluetooth
