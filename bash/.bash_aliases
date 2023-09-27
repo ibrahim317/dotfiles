@@ -23,7 +23,6 @@ alias b1='open ~/Documents/stocks/filtered/one_class.csv'
 alias b0='open ~/Documents/stocks/filtered/second_class.csv'
 alias b2='open ~/Documents/stocks/filtered/third_class.csv'
 export LANG=ar_EG.utf8
-export gitPass=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 
 
 #Functions
 
