@@ -1,6 +1,7 @@
 # ~/.bashrc: executed by bash(1) for non-login shells
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
+ export TOKEN="QLRpxPvSw2A0toqdvnVYVQ=="
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -121,6 +122,6 @@ fi
 export PATH=/opt/Densify:$PATH
 
 
-export p2=/home/ibrahim/Documents/projects/python/for_sent
 export p8=/home/ibrahim/Documents/projects/python/pygame
-export p1=/home/ibrahim/Documents/programming/projects/sentiment_analysis
+export p2=/home/ibrahim/Documents/programming/learning/webpack-starter
+export p1=/home/ibrahim/Desktop/cusializer

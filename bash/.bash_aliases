@@ -7,7 +7,7 @@ alias conn='nvim ~/.config/nvim'
 # Short-naming
 alias p='python3'
 alias cl='clear'
-alias n='code'
+alias n='nvim'
 alias so='source ~/.bash_aliases'
 alias i='sudo apt-get install'
 alias rpk='sudo apt remove'
@@ -23,9 +23,15 @@ alias b1='open ~/Documents/stocks/filtered/one_class.csv'
 alias b0='open ~/Documents/stocks/filtered/second_class.csv'
 alias b2='open ~/Documents/stocks/filtered/third_class.csv'
 export LANG=ar_EG.utf8
+export gitPass=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 
 
 #Functions
-
+c() {
+    filename=$(basename "$1")
+    extension="${filename##*.}"
+    filename="${filename%.*}"
+    gcc $(pwd)/"$1" -o "$filename"
+}
 cop() {
     filename=$(basename "$1")
     extension="${filename##*.}"
