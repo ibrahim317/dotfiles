@@ -5,7 +5,7 @@ draw_bold_text_with_bright_colors = true
 TERM = "xterm-256color"
 
 [font]
-size = 12.0
+size = 18.0
 
 [font.bold]
 family = "Hack Nerd Font"
@@ -120,8 +120,7 @@ args = ["-c", "~/Documents/scripts/co.sh && exec bash"]
 program = "/bin/bash"
 
 [window]
-dynamic_padding = false
-opacity = 0.9
+opacity = 1
 title = "Alacritty"
 
 [window.class]
@@ -129,5 +128,5 @@ general = "Alacritty"
 instance = "Alacritty"
 
 [window.padding]
-x = 6
-y = 6
+x = 0
+y = 0 
