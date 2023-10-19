@@ -1,7 +1,7 @@
 vim.g.mapleader = ' '
 -- My own nvigation keybinds
 
-vim.keymap.set('i','jj','<ESC>')
+vim.keymap.set('i','jj', '<ESC>')
 vim.keymap.set('t','jj','<LeftMouse>')
 vim.keymap.set('n', '<C-s>', ':w<CR>')
 vim.keymap.set('i', '<C-s>', '<ESC>:w<CR>')
