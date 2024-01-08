@@ -34,5 +34,6 @@ return require('packer').startup(function(use)
 			}
 		}
 	use 'kassio/neoterm'
+    use 'morhetz/gruvbox'
 
 	end)
