@@ -25,7 +25,7 @@ font pango:monospace 3
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork   					
 exec --no-startup-id nm-applet
-exec --no-startup-id xautolock -time 2 -locker ~/Documents/myScripts/sleep.sh 
+exec --no-startup-id xautolock -time 2 -locker ~/Documents/scripts/sleep.sh 
 
 
 ####################################            AUDIO                  ########################################
@@ -36,20 +36,14 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-#exec_always --no-startup-id ~/Documents/myScripts/gereting.sh
-bindsym  $mod+a exec ~/Documents/myScripts/aiAssistant.sh 
-bindsym $mod+Shift+a exec killall mpv
-####################################            PICOM                  ########################################
+#exec_always --no-startup-id ~/Documents/scripts/gereting.sh
 
-exec  --no-startup-id  picom --config ~/.config/picom/picom.conf
 
 
 ####################################            SCREENSHOT                 jj #######################################
 bindsym Print exec --no-startup-id maim --format=png "/home/$USER/Pictures/screenshots/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-all.png"
-bindsym $mod+Print exec --no-startup-id ~/Documents/myScripts/editScreenShoot.sh
+bindsym $mod+Print exec --no-startup-id ~/Documents/scripts/editScreenShoot.sh
 ####################################            GAPS                  ########################################
- gaps inner 9px
- gaps outer 9px
 bindsym $mod+minus gaps inner current plus 5
 bindsym $mod+plus gaps inner current minus 5
 bindsym $mod+Shift+minus gaps outer current plus 5
@@ -82,7 +76,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 20 # decrease screen
 bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle 
 bindsym $mod+s layout stacking
-# bindsym $mod+w layout tabbed
+bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
@@ -147,7 +141,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
     client.urgent           #900000 #900000 #ffffff #900000
 
     client.background       #242424
-for_window [class="^.*"] border pixel 0 
+for_window [class="^.*"] border pixel 1 
 
 
 
@@ -197,27 +191,27 @@ bindsym $mod+b bar mode toggle
 
 bindsym $mod+i bar mode invisible
 #####################################           DMENU
-bindsym $mod+d exec --no-startup-id dmenu_run -i -nb '#1f222d' -nf '#81a1c1' -sb '#81a1c1' -sf '#1f222d' -fn 'OperatorMonoBook:bold:pixelsize=18'
-
-
+bindsym $mod+d exec --no-startup-id dmenu_run
 ####################################            SHORTCUTS                  ########################################
 
 
 
-bindsym Mod1+1 exec ~/Documents/myScripts/translation.sh
-bindsym Mod1+w exec rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/material/scripts/rofi/launcher.rasi
+bindsym Mod1+1 exec firefox https://learn.microsoft.com/en-us/training/browse/?expanded=dotnet&products=aspnet-core
+bindsym Mod1+w exec rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/shapes/scripts/rofi/launcher.rasi
 bindsym Mod1+F4 exec .config/polybar/hack/scripts/powermenu.sh
 bindsym Mod1+d exec nemo ~
+bindsym Mod1+z exec firefox https://drive.google.com/drive/my-drive
 bindsym Mod1+o exec QT_QPA_PLATFORMTHEME=gtk2 okular
 bindsym Mod1+r exec alacritty -e ranger 
-bindsym Mod1+c exec firefox 
+bindsym Mod1+c exec  firefox 
+bindsym Mod1+x exec  firefox localhost:3000
 bindsym Mod1+s exec  firefox www.soundcloud.com
-bindsym Mod1+p exec  firefox chat.openai.com
+bindsym Mod1+p exec  firefox https://chat.openai.com/
 bindsym Mod1+y exec  firefox www.youtube.com
-bindsym Mod1+n exec  firefox www.notion.com
+bindsym Mod1+n exec  firefox www.notion.so
 bindsym Mod1+l exec  firefox https://web.whatsapp.com/
-bindsym Mod1+t exec  alacritty 
-bindsym Mod1+m exec alacritty -e nvim
+bindsym Mod1+t exec  alacritty   -e tmux 
+bindsym Mod1+m exec  code 
 
 
 ####################################            CHANGE THE LANG                  ########################################
@@ -235,7 +229,7 @@ exec  --no-startup-id "setxkbmap -model pc104 -layout us,ara -variant ,, -option
 ####################################            CHANGE THE WALLPAPER                  ########################################
 
 
-exec_always --no-startup-id ~/Documents/myScripts/wallpaperThings/removeFavoFiles.sh 
-exec --no-startup-id ~/Documents/myScripts/wallpaperThings/walchanger.sh
+exec_always --no-startup-id ~/Documents/scripts/wallpaperThings/removeFavoFiles.sh 
+exec --no-startup-id ~/Documents/scripts/wallpaperThings/walchanger.sh
 
 
