@@ -1,4 +1,4 @@
-   ####################################            I3 CONIFG FILE                  ########################################
+####################################            I3 CONIFG FILE                  ########################################
 ####################################            I3 CONIFG FILE                  ########################################
 ####################################            I3 CONIFG FILE                  ########################################
 ####################################            I3 CONIFG FILE                  ########################################
@@ -16,16 +16,17 @@
 bindsym $mod+Shift+q mode "$mode_system"
 
 
+
 ####################################            BASIC                  ########################################
 
 set $mod Mod4
 floating_modifier $mod
 bindsym Mod1+q kill
-font pango:monospace 3
+font pango:Terminus 14px
 exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork   					
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
-exec --no-startup-id xautolock -time 2 -locker ~/Documents/scripts/sleep.sh 
+exec --no-startup-id xautolock -time 2 -locker ~/Documents/scripts/sleep.sh
 
 
 ####################################            AUDIO                  ########################################
@@ -36,13 +37,12 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-#exec_always --no-startup-id ~/Documents/scripts/gereting.sh
+exec --no-startup-id  rustyvibes ~/.cargo/bin/Soundpacks/cherrymx-red-pbt/ --volume 30
 
 
 
 ####################################            SCREENSHOT                 jj #######################################
 bindsym Print exec --no-startup-id maim --format=png "/home/$USER/Pictures/screenshots/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-all.png"
-bindsym $mod+Print exec --no-startup-id ~/Documents/scripts/editScreenShoot.sh
 ####################################            GAPS                  ########################################
 bindsym $mod+minus gaps inner current plus 5
 bindsym $mod+plus gaps inner current minus 5
@@ -60,7 +60,7 @@ bindsym $mod+Right focus right
 bindsym $mod+Shift+h move left 50px
 bindsym $mod+Shift+j move down 50px
 bindsym $mod+Shift+k move up 50px
-bindsym $mod+Shift+l move right 50px 
+bindsym $mod+Shift+l move right 50px
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -74,7 +74,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 20 # decrease screen
 
 ####################################            LAYOUT                  ########################################
 bindsym $mod+v split v
-bindsym $mod+f fullscreen toggle 
+bindsym $mod+f fullscreen toggle
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
@@ -107,7 +107,7 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
-bindsym $mod+Tab workspace back_and_forth 
+bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
@@ -132,17 +132,17 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-    # Window color settings
-    # class                 border  backgr. text    indicator
-    client.focused          #81a1c1 #81a1c1 #ffffff #81a1c1
-    client.unfocused        #2e3440 #1f222d #888888 #1f222d
-    client.focused_inactive #2e3440 #1f222d #888888 #1f222d
-    client.placeholder      #2e3440 #1f222d #888888 #1f222d
-    client.urgent           #900000 #900000 #ffffff #900000
+# Window color settings
+# class                 border  backgr. text    indicator
+client.focused          #1f222d #81a1c1 #ffffff #81a1c1
+client.unfocused        #1f222d #1f222d #888888 #1f222d
+client.focused_inactive #1f222d #1f222d #888888 #1f222d
+client.placeholder      #1f222d #1f222d #888888 #1f222d
+client.urgent           #900000 #900000 #ffffff #900000
+client.background       #242424
 
-    client.background       #242424
-for_window [class="^.*"] border pixel 1 
-
+for_window [class="^.*"]  border pixel 1
+#for_window [class="^.*"] floating enable  border pixel 1
 
 
 
@@ -160,36 +160,11 @@ bindsym $mod+Mod1+l resize grow width 10 px or 10 ppt
 
 ####################################            POLYBAR                  ########################################
 
-exec --no-startup-id /home/ibrahim/.config/polybar/launch.sh --hack 
-bindsym $mod+Shift+b exec --no-startup-id pkill polybar ||/home/ibrahim/.config/polybar/launch.sh  --hack
+exec --no-startup-id /home/ibrahim/.config/polybar/launch.sh --hack
+bindsym $mod+Shift+b exec --no-startup-id pkill polybar || /home/ibrahim/.config/polybar/launch.sh  --hack
 for_window [class="polybar"] border pixel 0
 for_window [class="polybar"] gaps inner current set 0
 
-####################################           I3-BAR                  ########################################
-#bar {
-   # height 25
-   ## position top
-    #font pango:OperatorMono Nerd Font 13
-    #status_command i3status
-    #tray_padding 2
-    #separator_symbol "  "
-    #strip_workspace_numbers yes
-    #colors {
-    #        separator  #1f222d
-    #        background #1f222d
-    #        statusline #81a1c1
-
-            #                   border  background text
-     #       focused_workspace  #1f222d #1f222d    #81a1c1
-      #      active_workspace   #1f222d #252936    #5e81ac
-       #     inactive_workspace #1f222d #1f222d    #4c566a
-        #    urgent_workspace   #1f222d #1f222d    #ee829f
-         #   binding_mode       #1f222d #81a1c1    #2e3440 } }
-
-# bar toggle, hide or show
-bindsym $mod+b bar mode toggle
-
-bindsym $mod+i bar mode invisible
 #####################################           DMENU
 bindsym $mod+d exec --no-startup-id dmenu_run
 ####################################            SHORTCUTS                  ########################################
@@ -197,21 +172,21 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 
 
 bindsym Mod1+1 exec firefox https://learn.microsoft.com/en-us/training/browse/?expanded=dotnet&products=aspnet-core
-bindsym Mod1+w exec rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/shapes/scripts/rofi/launcher.rasi
+bindsym Mod1+w exec rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/hack/scripts/rofi/launcher.rasi
 bindsym Mod1+F4 exec .config/polybar/hack/scripts/powermenu.sh
 bindsym Mod1+d exec nemo ~
 bindsym Mod1+z exec firefox https://drive.google.com/drive/my-drive
 bindsym Mod1+o exec QT_QPA_PLATFORMTHEME=gtk2 okular
-bindsym Mod1+r exec alacritty -e ranger 
-bindsym Mod1+c exec  firefox 
-bindsym Mod1+x exec  firefox localhost:3000
+bindsym Mod1+r exec alacritty -e ranger
+bindsym Mod1+c exec  firefox
+bindsym Mod1+x exec  firefox http://127.0.0.1:8000
 bindsym Mod1+s exec  firefox www.soundcloud.com
 bindsym Mod1+p exec  firefox https://chat.openai.com/
 bindsym Mod1+y exec  firefox www.youtube.com
 bindsym Mod1+n exec  firefox www.notion.so
 bindsym Mod1+l exec  firefox https://web.whatsapp.com/
-bindsym Mod1+t exec  alacritty   -e tmux 
-bindsym Mod1+m exec  code 
+bindsym Mod1+t exec  alacritty   -e tmux
+
 
 
 ####################################            CHANGE THE LANG                  ########################################
@@ -221,15 +196,5 @@ bindsym Mod1+m exec  code
 
 
 exec  --no-startup-id "setxkbmap -model pc104 -layout us,ara -variant ,, -option grp:alt_shift_toggle"
-
-
-
-
-
-####################################            CHANGE THE WALLPAPER                  ########################################
-
-
-exec_always --no-startup-id ~/Documents/scripts/wallpaperThings/removeFavoFiles.sh 
-exec --no-startup-id ~/Documents/scripts/wallpaperThings/walchanger.sh
 
 
