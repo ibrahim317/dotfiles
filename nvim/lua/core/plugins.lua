@@ -2,6 +2,8 @@ return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	use({ "nvim-telescope/telescope.nvim", tag = "0.1.6", requires = { { "nvim-lua/plenary.nvim" } } })
 
+	use("mhartington/formatter.nvim")
+
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = function()
@@ -15,24 +17,8 @@ return require("packer").startup(function(use)
 			"nvim-tree/nvim-web-devicons", -- optional
 		},
 	})
-	use({
-		"goolord/alpha-nvim",
-		requires = {
-			"nvim-tree/nvim-web-devicons",
-			"nvim-lua/plenary.nvim",
-		},
-		config = function()
-			require("alpha").setup(require("alpha.themes.dashboard").config)
-		end,
-	})
-	-- nvim-cmp and dependencies
-	use("hrsh7th/nvim-cmp")
-	use("hrsh7th/cmp-buffer")
-	use("hrsh7th/cmp-path")
-	use("hrsh7th/cmp-cmdline")
 
-	use("mhartington/formatter.nvim")
+	use("kassio/neoterm")
 	use("morhetz/gruvbox")
-	use("widatama/vim-phoenix")
 	use("xiyaowong/transparent.nvim")
 end)
