@@ -1,5 +1,28 @@
 local util = require("formatter.util")
 
+local prettier_filetypes = {
+	"javascriptreact",
+	"typescriptreact",
+	"javascript",
+	"typescript",
+	"css",
+	"scss",
+	"html",
+	"json",
+	"yaml",
+	"markdown",
+}
+
+local function use_prettier()
+	local filetype = vim.bo.filetype
+	for _, ft in ipairs(prettier_filetypes) do
+		if ft == filetype then
+			return true
+		end
+	end
+	return false
+end
+
 require("formatter").setup({
 	-- Enable or disable logging
 	logging = true,
@@ -10,19 +33,11 @@ require("formatter").setup({
 		-- Formatter configurations for filetype "lua" go here
 		-- and will be executed in order
 		lua = {
-			-- "formatter.filetypes.lua" defines default configurations for the
-			-- "lua" filetype
 			require("formatter.filetypes.lua").stylua,
-
-			-- You can also define your own configuration
 			function()
-				-- Supports conditional formatting
 				if util.get_current_buffer_file_name() == "special.lua" then
 					return nil
 				end
-
-				-- Full specification of configurations is down below and in Vim help
-				-- files
 				return {
 					exe = "stylua",
 					args = {
@@ -36,16 +51,6 @@ require("formatter").setup({
 				}
 			end,
 		},
-		c = {
-			function()
-				return {
-					exe = "clang-format",
-					args = { "--assume-filename", vim.api.nvim_buf_get_name(0) },
-					stdin = true,
-				}
-			end,
-		},
-		-- Configuration for C++ files
 		cpp = {
 			function()
 				return {
@@ -55,13 +60,35 @@ require("formatter").setup({
 				}
 			end,
 		},
-
-		-- Use the special "*" filetype for defining formatter configurations on
-		-- any filetype
+		rust = {
+			function()
+				return {
+					exe = "rustfmt",
+					args = { "--emit=stdout" },
+					stdin = true,
+				}
+			end,
+		},
+		python = {
+			function()
+				return {
+					exe = "black", -- assuming you have black installed
+					args = { "-" },
+					stdin = true,
+				}
+			end,
+		},
 		["*"] = {
-			-- "formatter.filetypes.any" defines default configurations for any
-			-- filetype
 			require("formatter.filetypes.any").remove_trailing_whitespace,
+			function()
+				if use_prettier() then
+					return {
+						exe = "prettier",
+						args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0) },
+						stdin = true,
+					}
+				end
+			end,
 		},
 	},
 })
