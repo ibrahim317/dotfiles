@@ -26,6 +26,7 @@ return require("packer").startup(function(use)
 			})
 		end,
 	})
+
 	-- nvim-cmp and dependencies
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-nvim-lsp") -- LSP source for nvim-cmp
@@ -40,6 +41,7 @@ return require("packer").startup(function(use)
 	use({
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		"neovim/nvim-lspconfig",
 	})
 
