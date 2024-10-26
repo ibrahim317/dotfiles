@@ -1,0 +1,166 @@
+{
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.minimap.enabled": false,
+    "editor.formatOnSave": true,
+    "window.menuBarVisibility": "toggle",
+    "explorer.confirmDelete": false,
+    "editor.fontSize": 20,
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "$"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "$"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "I"
+            ],
+            "commands": [
+                "editor.action.revealDefinition"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "q"
+            ],
+            "command": [
+                ":q"
+            ]
+        },
+        {
+            "before": [
+                "q"
+            ],
+            "commands": [
+                ":quit"
+            ]
+        }
+    ],
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "g",
+                "I"
+            ],
+            "commands": [
+                "editor.action.revealDefinition"
+            ]
+        },
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "debug.onTaskErrors": "showErrors",
+    "workbench.startupEditor": "none",
+    "editor.lineNumbers": "relative",
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "workbench.editor.empty.hint": "hidden",
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "liveServer.settings.donotShowInfoMsg": true,
+    "editor.quickSuggestions": {
+        "strings": "on"
+    },
+    "explorer.confirmDragAndDrop": false,
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": "off"
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "prettier.useTabs": true,
+    "php.validate.executablePath": "/opt/lampp/bin/php",
+    "liveServer.settings.donotVerifyTags": true,
+    "[php]": {
+        "editor.defaultFormatter": "DEVSENSE.phptools-vscode"
+    },
+    "[xml]": {
+        "editor.autoClosingBrackets": "never",
+        "files.trimFinalNewlines": true
+    },
+    "extensions.autoUpdate": false,
+    "vim.leader": " ",
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "git.confirmSync": false,
+    "window.zoomLevel": 2,
+    "extensions.ignoreRecommendations": true,
+    "editor.fontFamily": "'Hack Nerd Font', 'monospace', monospace",
+    "[python]": {
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.formatOnType": true,
+        "editor.wordBasedSuggestions": "off",
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true,
+    "editor.smoothScrolling": true,
+    "vim.useSystemClipboard": true,
+    "terminal.integrated.fontSize": 18,
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "explorer.compactFolders": false,
+    "phpTools.language": "en",
+    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "workbench.iconTheme": "material-icon-theme",
+    "vscode_custom_css.imports": [
+        "file:///home/ibrahim/.cursor/scripts/resize-quickinput-widget.js",
+        "file:///home/ibrahim/.cursor/extensions/brandonkirbyson.vscode-animations-2.0.4/dist/updateHandler.js"
+    ],
+    "animations.Enabled": true,
+    "animations.Install-Method": "Custom CSS and JS"
+}
