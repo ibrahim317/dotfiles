@@ -22,8 +22,37 @@ require("lspconfig").pyright.setup({
 		debounce_text_changes = 150,
 	},
 })
+require("lspconfig").intelephense.setup({
+	capabilities = capabilities,
+	flags = {
+		debounce_text_changes = 150,
+	},
+	settings = {
+		intelephense = {
+			stubs = {
+				"Core",
+				"Reflection",
+				"SPL",
+				"SimpleXML",
+				"ctype",
+				"date",
+				"exif",
+				"filter",
+				"hash",
+				"imagick",
+				"json",
+				"pcre",
+				"random",
+				"standard",
+			},
+		},
+	},
+})
 
 require("lspconfig").rust_analyzer.setup({
+	capabilities = capabilities,
+})
+require("lspconfig").dcmls.setup({
 	capabilities = capabilities,
 })
 require("lspconfig").tailwindcss.setup({
