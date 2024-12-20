@@ -1,0 +1,195 @@
+{
+    "security.workspace.trust.untrustedFiles": "open",
+    "cmake.configureOnOpen": true,
+    "editor.minimap.enabled": false,
+    "editor.formatOnSave": true,
+    "window.menuBarVisibility": "toggle",
+    "explorer.confirmDelete": false,
+    "editor.fontSize": 20,
+    // vim settings
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "$"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "$"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "I"
+            ],
+            "commands": [
+                "editor.action.revealDefinition"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "q"
+            ],
+            "command": [
+                ":q"
+            ]
+        },
+        {
+            "before": [
+                "q"
+            ],
+            "commands": [
+                ":quit"
+            ]
+        }
+    ],
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "g",
+                "I"
+            ],
+            "commands": [
+                "editor.action.revealDefinition"
+            ]
+        },
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+    // end of vim extension
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "debug.onTaskErrors": "showErrors",
+    "workbench.startupEditor": "none",
+    "editor.lineNumbers": "relative",
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "workbench.editor.empty.hint": "hidden",
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "liveServer.settings.donotShowInfoMsg": true,
+    "fazakir.popUp": "middle",
+    "editor.quickSuggestions": {
+        "strings": "on"
+    },
+    "explorer.confirmDragAndDrop": false,
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": "off"
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "tabnine.experimentalAutoImports": true,
+    "prettier.useTabs": true,
+    "php.validate.executablePath": "/opt/lampp/bin/php",
+    "liveServer.settings.donotVerifyTags": true,
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    },
+    "redhat.telemetry.enabled": false,
+    "[xml]": {
+        "editor.autoClosingBrackets": "never",
+        "files.trimFinalNewlines": true
+    },
+    "cmake.showOptionsMovedNotification": false,
+    "extensions.autoUpdate": false,
+    "python.globalModuleInstallation": true,
+    "python.defaultInterpreterPath": "/bin/python3",
+    "vim.leader": " ",
+    "C_Cpp.default.compilerPath": "/usr/bin/g++",
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "git.confirmSync": false,
+    "window.zoomLevel": 2,
+    "extensions.ignoreRecommendations": true,
+    "C_Cpp.clang_format_fallbackStyle": "Google",
+    "editor.fontFamily": "'Hack Nerd Font', 'monospace', monospace",
+    "chatgpt.lang": "en",
+    "go.toolsManagement.autoUpdate": true,
+    "[python]": {
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.formatOnType": true,
+        "editor.wordBasedSuggestions": "off",
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "cloudcode.duetAI.project": "my-cutsom-youtube",
+    "cloudcode.duetAI.inlineSuggestions.enableAuto": false,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true,
+    "dart.debugExternalPackageLibraries": false,
+    "dart.debugSdkLibraries": false,
+    "dart.devToolsBrowser": "default",
+    "vim.useSystemClipboard": true,
+    "terminal.integrated.fontSize": 18,
+    "terminal.integrated.defaultProfile.linux": "tmux",
+    "explorer.compactFolders": false,
+    "phpTools.language": "en",
+    "workbench.experimental.enableNewProfilesUI": true,
+    "window.newWindowProfile": "Laravel",
+    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "workbench.iconTheme": "material-icon-theme",
+    "vscode_custom_css.imports": [
+        "file:///home/ibrahim/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.4/dist/updateHandler.js"
+    ],
+    "animations.Enabled": true,
+    "animations.Install-Method": "Apc Customize UI++",
+    // "apc.imports": [
+    //   "file://${userHome}/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.4/dist/updateHandler.js"
+    // ],
+    "editor.smoothScrolling": true,
+    "workbench.editorAssociations": {
+        "*.class": "default"
+    },
+    "animations.Custom-CSS": false,
+    "apc.imports": [
+        "file://${userHome}/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.4/dist/updateHandler.js"
+    ]
+}

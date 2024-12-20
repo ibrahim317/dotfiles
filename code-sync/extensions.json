@@ -1,0 +1,29 @@
+{
+    "extensions": [
+        "be5invis.vscode-custom-css",
+        "bradlc.vscode-tailwindcss",
+        "BrandonKirbyson.vscode-animations",
+        "ctf0.env-symbol-provider",
+        "ctf0.php-array-symbols",
+        "dbaeumer.vscode-eslint",
+        "DEVSENSE.intelli-php-vscode",
+        "DEVSENSE.phptools-vscode",
+        "DEVSENSE.profiler-php-vscode",
+        "emmanuelbeziat.vscode-great-icons",
+        "esbenp.prettier-vscode",
+        "formulahendry.auto-rename-tag",
+        "georgewfraser.vscode-javac",
+        "golf1052.code-sync",
+        "hossaini.bootstrap-intellisense",
+        "jdinhlife.gruvbox",
+        "onecentlin.laravel-blade",
+        "phproberto.vscode-php-getters-setters",
+        "PKief.material-icon-theme",
+        "redhat.vscode-xml",
+        "ritwickdey.LiveServer",
+        "ryannaddy.laravel-artisan",
+        "ryanolsonx.solarized",
+        "shd101wyy.markdown-preview-enhanced",
+        "shufo.vscode-blade-formatter"
+    ]
+}
