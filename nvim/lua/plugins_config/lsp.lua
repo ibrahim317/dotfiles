@@ -15,6 +15,28 @@ end
 require("lspconfig").lua_ls.setup({
 
 	capabilities = capabilities,
+	settings = {
+		Lua = {
+			completion = {
+				callSnippet = "Both",
+			},
+			diagnostics = {
+				disable = { "incomplete-signature-doc", "missing-fields" },
+				-- You could add more globals i.e., "vim" here, albeit w/o intellisense
+				globals = { "MiniMap" },
+			},
+			hint = {
+				enable = true,
+				arrayIndex = "Disable",
+			},
+			telemetry = { enable = false },
+			chcekThirdParty = false,
+		},
+	},
+
+})
+require('lazydev').setup({
+  enable = true, -- Ensure it's enabled
 })
 require("lspconfig").pyright.setup({
 	capabilities = capabilities,
@@ -69,3 +91,4 @@ require("lspconfig").tailwindcss.setup({
 		},
 	},
 })
+

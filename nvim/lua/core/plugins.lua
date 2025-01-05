@@ -26,6 +26,7 @@ return require("packer").startup(function(use)
 			})
 		end,
 	})
+	use("folke/lazydev.nvim")
 	-- nvim-cmp and dependencies
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-nvim-lsp") -- LSP source for nvim-cmp
@@ -52,6 +53,7 @@ return require("packer").startup(function(use)
 	})
 
 	use("morhetz/gruvbox")
+	use ('maxmx03/solarized.nvim')
 	use("widatama/vim-phoenix")
 	use("xiyaowong/transparent.nvim")
 end)

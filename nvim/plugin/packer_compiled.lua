@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/ibrahim/snap/alacritty/common/.cache/nvim/packer_hererocks/2.1.1713484068/share/lua/5.1/?.lua;/home/ibrahim/snap/alacritty/common/.cache/nvim/packer_hererocks/2.1.1713484068/share/lua/5.1/?/init.lua;/home/ibrahim/snap/alacritty/common/.cache/nvim/packer_hererocks/2.1.1713484068/lib/luarocks/rocks-5.1/?.lua;/home/ibrahim/snap/alacritty/common/.cache/nvim/packer_hererocks/2.1.1713484068/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/ibrahim/snap/alacritty/common/.cache/nvim/packer_hererocks/2.1.1713484068/lib/lua/5.1/?.so"
+local package_path_str = "/home/ibrahim/.cache/nvim/packer_hererocks/2.1.1713484068/share/lua/5.1/?.lua;/home/ibrahim/.cache/nvim/packer_hererocks/2.1.1713484068/share/lua/5.1/?/init.lua;/home/ibrahim/.cache/nvim/packer_hererocks/2.1.1713484068/lib/luarocks/rocks-5.1/?.lua;/home/ibrahim/.cache/nvim/packer_hererocks/2.1.1713484068/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/ibrahim/.cache/nvim/packer_hererocks/2.1.1713484068/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -120,6 +120,12 @@ _G.packer_plugins = {
     path = "/home/ibrahim/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/morhetz/gruvbox"
   },
+  ["lazy-dev.nvim"] = {
+    config = { "\27LJ\2\n\v\0\0\1\0\0\0\1K\0\1\0\0" },
+    loaded = true,
+    path = "/home/ibrahim/.local/share/nvim/site/pack/packer/start/lazy-dev.nvim",
+    url = "https://github.com/folke/lazy-dev.nvim"
+  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/ibrahim/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
@@ -171,6 +177,11 @@ _G.packer_plugins = {
     path = "/home/ibrahim/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["solarized.nvim"] = {
+    loaded = true,
+    path = "/home/ibrahim/.local/share/nvim/site/pack/packer/start/solarized.nvim",
+    url = "https://github.com/maxmx03/solarized.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/ibrahim/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -189,14 +200,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: conform.nvim
-time([[Config for conform.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fconform\frequire\0", "config", "conform.nvim")
-time([[Config for conform.nvim]], false)
+-- Config for: lazy-dev.nvim
+time([[Config for lazy-dev.nvim]], true)
+try_loadstring("\27LJ\2\n\v\0\0\1\0\0\0\1K\0\1\0\0", "config", "lazy-dev.nvim")
+time([[Config for lazy-dev.nvim]], false)
 -- Config for: nvim-ts-autotag
 time([[Config for nvim-ts-autotag]], true)
 try_loadstring("\27LJ\2\np\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\fautotag\1\0\1\fautotag\0\1\0\1\venable\2\nsetup\28nvim-treesitter.configs\frequire\0", "config", "nvim-ts-autotag")
 time([[Config for nvim-ts-autotag]], false)
+-- Config for: conform.nvim
+time([[Config for conform.nvim]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fconform\frequire\0", "config", "conform.nvim")
+time([[Config for conform.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
