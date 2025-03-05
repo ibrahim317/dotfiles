@@ -1,15 +1,10 @@
 require("mason").setup()
 require("mason-lspconfig").setup()
+local mason_registry = require('mason-registry')
+local ts_plugin_path = mason_registry.get_package('vue-language-server'):get_install_path() .. '/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin'
+
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
-local on_attach = function(client, bufnr)
-	local function buf_set_keymap(...)
-		vim.api.nvim_buf_set_keymap(bufnr, ...)
-	end
-	local function buf_set_option(...)
-		vim.api.nvim_buf_set_option(bufnr, ...)
-	end
-end
 
 -- After setting up mason-lspconfig you may set up servers via lspconfig
 require("lspconfig").lua_ls.setup({
@@ -33,10 +28,9 @@ require("lspconfig").lua_ls.setup({
 			chcekThirdParty = false,
 		},
 	},
-
 })
-require('lazydev').setup({
-  enable = true, -- Ensure it's enabled
+require("lazydev").setup({
+	enable = true, -- Ensure it's enabled
 })
 require("lspconfig").pyright.setup({
 	capabilities = capabilities,
@@ -74,21 +68,21 @@ require("lspconfig").intelephense.setup({
 require("lspconfig").rust_analyzer.setup({
 	capabilities = capabilities,
 })
+require("lspconfig").ts_ls.setup({
+    init_options = {
+      plugins = {
+        {
+          name = '@vue/typescript-plugin',
+          location = ts_plugin_path,
+          -- If .vue file cannot be recognized in either js or ts file try to add `typescript` and `javascript` in languages table.
+          languages = { 'vue' },
+        },
+      },
+    },
+    filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+})
+
 require("lspconfig").dcmls.setup({
 	capabilities = capabilities,
 })
-require("lspconfig").tailwindcss.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	settings = {
-		tailwindCSS = {
-			experimental = {
-				classRegex = {
-					{ "class\\s*?=\\s*?[\"'`]([^\"'`]*)[\"'`]", "class\\s*?=\\s*?[\"'`]([^\"'`]*)[\"'`]" },
-					{ "className\\s*?=\\s*?[\"'`]([^\"'`]*)[\"'`]", "className\\s*?=\\s*?[\"'`]([^\"'`]*)[\"'`]" },
-				},
-			},
-		},
-	},
-})
-
+require("lspconfig").volar.setup({})

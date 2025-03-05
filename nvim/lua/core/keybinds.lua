@@ -3,24 +3,23 @@ vim.g.mapleader = " "
 
 vim.keymap.set("i", "jj", "<ESC>")
 vim.keymap.set("t", "jj", "<LeftMouse>")
-vim.keymap.set("n", "<C-s>", ":w<CR>")
-vim.keymap.set("i", "<C-s>", "<ESC>:w<CR>")
-vim.api.nvim_set_keymap("n", "q", ":q", { noremap = true, silent = false })
-vim.keymap.set("n", "<C-t>", ":tabnew<CR>")
-vim.keymap.set("n", "<C-i>", ":tabnext<CR>")
-vim.keymap.set("n", "<S-w>", ":tabclose<CR>")
+vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<C-s>", "<ESC>:w<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-t>", ":tabnew<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-Tab>", ":tabnext<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>w", ":tabclose<CR>", { noremap = true, silent = true })
 
 -- search highlight
-vim.keymap.set("n", "<C-l>", ":noh<CR>")
+vim.api.nvim_set_keymap("n", "<C-l>", ":noh<CR>:Noice dismiss<CR>", { noremap = true, silent = true })
 
 -- telescope
 local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader><leader>", builtin.find_files, {})
-vim.api.nvim_set_keymap("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-p>", builtin.find_files, {})
+vim.api.nvim_set_keymap("n", "<C-f>", "<cmd>Telescope live_grep<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 
 -- nvim-tree
-vim.keymap.set("n", "<leader>n", ":NvimTreeFindFileToggle<CR>")
+vim.api.nvim_set_keymap("n", "<leader>n", ":NvimTreeFindFileToggle<CR>", { noremap = true, silent = true })
 
 -- shell commands
 vim.api.nvim_set_keymap("n", "<leader>z", "q:i!", { noremap = true, silent = false })

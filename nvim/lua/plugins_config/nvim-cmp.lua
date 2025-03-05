@@ -15,8 +15,7 @@ cmp.setup({
 		["<C-e>"] = cmp.mapping.abort(),
 		["<CR>"] = cmp.mapping.confirm({ select = false }),
 
-		-- Use Tab and Shift-Tab to navigate through popup menu
-		["<Tab>"] = cmp.mapping(function(fallback)
+		["<C-j>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
 			else
@@ -24,7 +23,7 @@ cmp.setup({
 			end
 		end, { "i", "s" }),
 
-		["<S-Tab>"] = cmp.mapping(function(fallback)
+		["<C-k>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
 			else

@@ -26,6 +26,7 @@ return require("packer").startup(function(use)
 			})
 		end,
 	})
+	use("lukas-reineke/indent-blankline.nvim")
 	use("folke/lazydev.nvim")
 	-- nvim-cmp and dependencies
 	use("hrsh7th/nvim-cmp")
@@ -51,9 +52,48 @@ return require("packer").startup(function(use)
 			require("conform").setup()
 		end,
 	})
+	use({
+		"folke/noice.nvim",
+		requires = {
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+		},
+	})
+	-- terminal
+	use("akinsho/toggleterm.nvim")
+	-- codeium
+	use({
+		"Exafunction/codeium.vim",
+		config = function()
+			-- Change '<C-g>' here to any keycode you like.
+			vim.keymap.set("i", "<C-l>", function()
+				return vim.fn["codeium#Accept"]()
+			end, { expr = true, silent = true })
+			vim.keymap.set("i", "<C-k>", function()
+				return vim.fn["codeium#CycleCompletions"](1)
+			end, { expr = true, silent = true })
+			vim.keymap.set("i", "<C-j>", function()
+				return vim.fn["codeium#CycleCompletions"](-1)
+			end, { expr = true, silent = true })
+			vim.keymap.set("i", "<C-h>", function()
+				return vim.fn["codeium#Clear"]()
+			end, { expr = true, silent = true })
+		end,
+	})
+	-- git
+	use("lewis6991/gitsigns.nvim")
 
+	-- tabline
+	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
+	use({
+		"craftzdog/solarized-osaka.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	})
 	use("morhetz/gruvbox")
-	use ('maxmx03/solarized.nvim')
+	-- solarized colorscheme
+	use("maxmx03/solarized.nvim")
 	use("widatama/vim-phoenix")
 	use("xiyaowong/transparent.nvim")
 end)

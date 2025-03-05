@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/ibrahim/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["bufferline.nvim"] = {
+    loaded = true,
+    path = "/home/ibrahim/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/ibrahim/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -104,6 +109,12 @@ _G.packer_plugins = {
     path = "/home/ibrahim/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["codeium.vim"] = {
+    config = { "\27LJ\2\n-\0\0\2\0\3\0\0046\0\0\0009\0\1\0009\0\2\0D\0\1\0\19codeium#Accept\afn\bvim;\0\0\3\0\3\0\0056\0\0\0009\0\1\0009\0\2\0)\2\1\0D\0\2\0\29codeium#CycleCompletions\afn\bvim;\0\0\3\0\3\0\0056\0\0\0009\0\1\0009\0\2\0)\2ÿÿD\0\2\0\29codeium#CycleCompletions\afn\bvim,\0\0\2\0\3\0\0046\0\0\0009\0\1\0009\0\2\0D\0\1\0\18codeium#Clear\afn\bvimü\1\1\0\6\0\16\0!6\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0003\4\5\0005\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\a\0003\4\b\0005\5\t\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\n\0003\4\v\0005\5\f\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\r\0003\4\14\0005\5\15\0B\0\5\1K\0\1\0\1\0\2\texpr\2\vsilent\2\0\n<C-h>\1\0\2\texpr\2\vsilent\2\0\n<C-j>\1\0\2\texpr\2\vsilent\2\0\n<C-k>\1\0\2\texpr\2\vsilent\2\0\n<C-l>\6i\bset\vkeymap\bvim\0" },
+    loaded = true,
+    path = "/home/ibrahim/.local/share/nvim/site/pack/packer/start/codeium.vim",
+    url = "https://github.com/Exafunction/codeium.vim"
+  },
   ["conform.nvim"] = {
     config = { "\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fconform\frequire\0" },
     loaded = true,
@@ -115,16 +126,25 @@ _G.packer_plugins = {
     path = "/home/ibrahim/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/home/ibrahim/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   gruvbox = {
     loaded = true,
     path = "/home/ibrahim/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/morhetz/gruvbox"
   },
-  ["lazy-dev.nvim"] = {
-    config = { "\27LJ\2\n\v\0\0\1\0\0\0\1K\0\1\0\0" },
+  ["indent-blankline.nvim"] = {
     loaded = true,
-    path = "/home/ibrahim/.local/share/nvim/site/pack/packer/start/lazy-dev.nvim",
-    url = "https://github.com/folke/lazy-dev.nvim"
+    path = "/home/ibrahim/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
+  ["lazydev.nvim"] = {
+    loaded = true,
+    path = "/home/ibrahim/.local/share/nvim/site/pack/packer/start/lazydev.nvim",
+    url = "https://github.com/folke/lazydev.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -136,6 +156,16 @@ _G.packer_plugins = {
     path = "/home/ibrahim/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["noice.nvim"] = {
+    loaded = true,
+    path = "/home/ibrahim/.local/share/nvim/site/pack/packer/start/noice.nvim",
+    url = "https://github.com/folke/noice.nvim"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/home/ibrahim/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/ibrahim/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -145,6 +175,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ibrahim/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-notify"] = {
+    loaded = true,
+    path = "/home/ibrahim/.local/share/nvim/site/pack/packer/start/nvim-notify",
+    url = "https://github.com/rcarriga/nvim-notify"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -187,6 +222,11 @@ _G.packer_plugins = {
     path = "/home/ibrahim/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["toggleterm.nvim"] = {
+    loaded = true,
+    path = "/home/ibrahim/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+    url = "https://github.com/akinsho/toggleterm.nvim"
+  },
   ["transparent.nvim"] = {
     loaded = true,
     path = "/home/ibrahim/.local/share/nvim/site/pack/packer/start/transparent.nvim",
@@ -200,10 +240,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: lazy-dev.nvim
-time([[Config for lazy-dev.nvim]], true)
-try_loadstring("\27LJ\2\n\v\0\0\1\0\0\0\1K\0\1\0\0", "config", "lazy-dev.nvim")
-time([[Config for lazy-dev.nvim]], false)
+-- Config for: codeium.vim
+time([[Config for codeium.vim]], true)
+try_loadstring("\27LJ\2\n-\0\0\2\0\3\0\0046\0\0\0009\0\1\0009\0\2\0D\0\1\0\19codeium#Accept\afn\bvim;\0\0\3\0\3\0\0056\0\0\0009\0\1\0009\0\2\0)\2\1\0D\0\2\0\29codeium#CycleCompletions\afn\bvim;\0\0\3\0\3\0\0056\0\0\0009\0\1\0009\0\2\0)\2ÿÿD\0\2\0\29codeium#CycleCompletions\afn\bvim,\0\0\2\0\3\0\0046\0\0\0009\0\1\0009\0\2\0D\0\1\0\18codeium#Clear\afn\bvimü\1\1\0\6\0\16\0!6\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0003\4\5\0005\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\a\0003\4\b\0005\5\t\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\n\0003\4\v\0005\5\f\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\r\0003\4\14\0005\5\15\0B\0\5\1K\0\1\0\1\0\2\texpr\2\vsilent\2\0\n<C-h>\1\0\2\texpr\2\vsilent\2\0\n<C-j>\1\0\2\texpr\2\vsilent\2\0\n<C-k>\1\0\2\texpr\2\vsilent\2\0\n<C-l>\6i\bset\vkeymap\bvim\0", "config", "codeium.vim")
+time([[Config for codeium.vim]], false)
 -- Config for: nvim-ts-autotag
 time([[Config for nvim-ts-autotag]], true)
 try_loadstring("\27LJ\2\np\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\fautotag\1\0\1\fautotag\0\1\0\1\venable\2\nsetup\28nvim-treesitter.configs\frequire\0", "config", "nvim-ts-autotag")
