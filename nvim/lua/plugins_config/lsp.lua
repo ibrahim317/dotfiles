@@ -1,8 +1,5 @@
 require("mason").setup()
 require("mason-lspconfig").setup()
-local mason_registry = require("mason-registry")
-local ts_plugin_path = mason_registry.get_package("vue-language-server"):get_install_path()
-	.. "/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin"
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -53,16 +50,6 @@ require("lspconfig").rust_analyzer.setup({
 	capabilities = capabilities,
 })
 require("lspconfig").ts_ls.setup({
-	init_options = {
-		plugins = {
-			{
-				name = "@vue/typescript-plugin",
-				location = ts_plugin_path,
-				-- If .vue file cannot be recognized in either js or ts file try to add `typescript` and `javascript` in languages table.
-				languages = { "vue" },
-			},
-		},
-	},
 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 })
 
