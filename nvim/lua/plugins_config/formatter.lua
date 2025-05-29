@@ -7,7 +7,7 @@ require("conform").setup({
 		javascript = { "prettierd" },
 		typescript = { "prettierd" },
 		typescriptreact = { "prettierd" },
-		php = { "pretty-php" },
+		php = { "php-cs-fixer" },
 	},
 	notify_on_error = true,
 })

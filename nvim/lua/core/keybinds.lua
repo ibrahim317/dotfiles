@@ -8,9 +8,10 @@ vim.api.nvim_set_keymap("i", "<C-s>", "<ESC>:w<CR>", { noremap = true, silent = 
 vim.api.nvim_set_keymap("n", "<C-t>", ":tabnew<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-Tab>", ":tabnext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>w", ":tabclose<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-i>", ":Format<CR>", { noremap = true, silent = true })
 
 -- search highlight
-vim.api.nvim_set_keymap("n", "<C-l>", ":noh<CR>:Noice dismiss<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-;>", ":noh<CR>:Noice dismiss<CR>", { noremap = true, silent = true })
 
 -- telescope
 local builtin = require("telescope.builtin")

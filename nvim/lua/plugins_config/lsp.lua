@@ -1,8 +1,8 @@
 require("mason").setup()
 require("mason-lspconfig").setup()
-local mason_registry = require('mason-registry')
-local ts_plugin_path = mason_registry.get_package('vue-language-server'):get_install_path() .. '/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin'
-
+local mason_registry = require("mason-registry")
+local ts_plugin_path = mason_registry.get_package("vue-language-server"):get_install_path()
+	.. "/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin"
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -38,51 +38,35 @@ require("lspconfig").pyright.setup({
 		debounce_text_changes = 150,
 	},
 })
-require("lspconfig").intelephense.setup({
-	capabilities = capabilities,
-	flags = {
-		debounce_text_changes = 150,
-	},
-	settings = {
-		intelephense = {
-			stubs = {
-				"Core",
-				"Reflection",
-				"SPL",
-				"SimpleXML",
-				"ctype",
-				"date",
-				"exif",
-				"filter",
-				"hash",
-				"imagick",
-				"json",
-				"pcre",
-				"random",
-				"standard",
-			},
-		},
-	},
+
+require("lspconfig").phpactor.setup({
+	cmd = { "phpactor", "language-server" },
+	filetypes = { "php" },
+	root_dir = require("lspconfig").util.root_pattern("composer.json", ".git"),
+	on_attach = function(_, bufnr)
+		print("Phpactor attached to buffer " .. bufnr)
+	end,
+	capabilities = vim.lsp.protocol.make_client_capabilities(), -- Customize if needed
 })
 
 require("lspconfig").rust_analyzer.setup({
 	capabilities = capabilities,
 })
 require("lspconfig").ts_ls.setup({
-    init_options = {
-      plugins = {
-        {
-          name = '@vue/typescript-plugin',
-          location = ts_plugin_path,
-          -- If .vue file cannot be recognized in either js or ts file try to add `typescript` and `javascript` in languages table.
-          languages = { 'vue' },
-        },
-      },
-    },
-    filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+	init_options = {
+		plugins = {
+			{
+				name = "@vue/typescript-plugin",
+				location = ts_plugin_path,
+				-- If .vue file cannot be recognized in either js or ts file try to add `typescript` and `javascript` in languages table.
+				languages = { "vue" },
+			},
+		},
+	},
+	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 })
 
-require("lspconfig").dcmls.setup({
-	capabilities = capabilities,
+require("lspconfig").dartls.setup({
+	cmd = { "dart", "language-server", "--protocol=lsp" },
 })
 require("lspconfig").volar.setup({})

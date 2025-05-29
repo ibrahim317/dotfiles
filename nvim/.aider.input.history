@@ -1,0 +1,51 @@
+
+# 2025-03-20 12:59:44.927996
++yes
+
+# 2025-03-20 13:01:30.479986
++no
+
+# 2025-03-20 13:01:38.079737
++y
+
+# 2025-03-20 13:08:22.263879
++no
+
+# 2025-03-26 13:02:46.972280
++n
+
+# 2025-03-26 13:03:09.322128
++I want to change the nvimTree config to show all files even (.env)
+
+# 2025-03-26 13:03:34.899200
++/add
+
+# 2025-03-26 13:04:15.871582
++/add lua/plugins_config/nvimTree.lua
+
+# 2025-03-26 13:04:24.562919
++this is the config 
+
+# 2025-03-26 13:05:08.727176
++still the .env is not showing
+
+# 2025-03-26 13:05:52.759437
++still, could it be that it ignore what is .gitignore?
+
+# 2025-03-26 13:06:59.149872
++try setting the config for git 
+
+# 2025-03-26 13:07:31.120078
++yep that worked thanks
+
+# 2025-03-26 16:21:21.453557
++n
+
+# 2025-03-26 16:23:11.939557
++I want telescope to be able to find files even it's in the .gitignore /add lua/plugins_config/telescope.lua lua/core/keybindings.lua
+
+# 2025-03-26 16:23:38.595235
++y
+
+# 2025-03-26 16:24:23.435620
++still I can't see the .env files
