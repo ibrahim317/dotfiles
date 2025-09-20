@@ -193,7 +193,7 @@ simple_install() {
 
 # Execute main logic when script is sourced or run
 # This ensures the script works whether run directly or piped
-if [[ "${0}" == "bash" ]] || [[ -n "${BASH_EXECUTION_STRING}" ]] || [[ -z "${BASH_SOURCE[0]}" ]] || [[ "${BASH_SOURCE[0]}" != "${0}" ]]; then
+if [[ "${0}" == "bash" ]] || [[ "${0}" == "/dev/stdin" ]] || [[ -n "${BASH_EXECUTION_STRING}" ]] || [[ -z "${BASH_SOURCE[0]}" ]] || [[ "${BASH_SOURCE[0]}" != "${0}" ]]; then
     # Check for simple mode flag
     if [[ "$1" == "--simple" ]]; then
         simple_install
