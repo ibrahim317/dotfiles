@@ -168,13 +168,15 @@ main() {
 # Simple installation mode (for one-liner usage)
 simple_install() {
     print_info "Running in simple mode - installing nvim config from GitHub"
-    local temp_dir=$(mktemp -d)
+    create_config_dir || exit 1
+    local temp_dir
+    temp_dir=$(mktemp -d)
 
-    if git clone "https://github.com/ibrahim317/dotfiles.git" "$temp_dir/repo" 2>/dev/null; then
+    if git clone "https://github.com/ibrahim317/dotfiles.git" "$temp_dir/repo"; then
         if [ -d "$temp_dir/repo/nvim" ]; then
             # Backup existing config
             if [ -d "$NVIM_DEST_DIR" ]; then
-                mv "$NVIM_DEST_DIR" "$NVIM_DEST_DIR.backup.$(date +%Y%m%d_%H%M%S)" 2>/dev/null
+                mv "$NVIM_DEST_DIR" "$NVIM_DEST_DIR.backup.$(date +%Y%m%d_%H%M%S)"
             fi
 
             # Install new config
