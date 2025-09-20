@@ -165,7 +165,38 @@ main() {
     print_info "If you had a backup created, you can find it at: $NVIM_DEST_DIR$BACKUP_SUFFIX"
 }
 
+# Simple installation mode (for one-liner usage)
+simple_install() {
+    print_info "Running in simple mode - installing nvim config from GitHub"
+    local temp_dir=$(mktemp -d)
+
+    if git clone "https://github.com/ibrahim317/dotfiles.git" "$temp_dir/repo" 2>/dev/null; then
+        if [ -d "$temp_dir/repo/nvim" ]; then
+            # Backup existing config
+            if [ -d "$NVIM_DEST_DIR" ]; then
+                mv "$NVIM_DEST_DIR" "$NVIM_DEST_DIR.backup.$(date +%Y%m%d_%H%M%S)" 2>/dev/null
+            fi
+
+            # Install new config
+            cp -r "$temp_dir/repo/nvim" "$NVIM_DEST_DIR"
+            rm -rf "$temp_dir"
+            print_success "Neovim configuration installed successfully!"
+            print_info "You can now start nvim to use your new configuration"
+            exit 0
+        fi
+    fi
+
+    rm -rf "$temp_dir"
+    print_error "Installation failed"
+    exit 1
+}
+
 # Check if script is being run directly
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-    main "$@"
+    # Check for simple mode flag
+    if [[ "$1" == "--simple" ]]; then
+        simple_install
+    else
+        main "$@"
+    fi
 fi
