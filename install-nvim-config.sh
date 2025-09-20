@@ -191,8 +191,8 @@ simple_install() {
     exit 1
 }
 
-# Check if script is being run directly
-if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+# Check if script is being run directly or piped
+if [[ -n "${BASH_SOURCE[0]}" && "${BASH_SOURCE[0]}" == "${0}" ]] || [[ -z "${BASH_SOURCE[0]}" ]]; then
     # Check for simple mode flag
     if [[ "$1" == "--simple" ]]; then
         simple_install
