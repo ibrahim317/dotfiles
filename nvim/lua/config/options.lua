@@ -20,5 +20,5 @@ vim.opt.wildignore:append {
   "*/venv/*",
   "*/__pycache__/*",
 }
-vim.cmd("colorscheme solarized-osaka")
+vim.cmd("colorscheme industry")
 

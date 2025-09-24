@@ -5,7 +5,7 @@ local keymap = vim.keymap.set
 keymap("n", "<C-/>", ":grep ", n_opts)
 keymap("n", "<C-p>", ":FZF<cr>", n_opts)
 keymap("n", "<C-e>", ":e ", n_opts)
-keymap("n", "<C-n>", ":Dired<cr>", n_opts)
+keymap("n", "<C-n>", ":SkyBison Dired <CR>", n_opts)
 keymap("n", "<C-l>", ":CursorAgent<CR>", n_opts)
 keymap("n", "<C-lA>", ":CursorAgentBuffer<CR>", n_opts)
 keymap("n", "<C-f>", ":lua require('conform').format()<CR>:w<CR>", n_opts)
@@ -25,3 +25,4 @@ keymap("i", "<C-f>", ":lua require('conform').format()<CR>:w<CR>", n_opts)
 keymap("v", "<C-la>", ":CursorAgentSelection<CR>", n_opts)
 
 keymap("t", "<C-l>", "<C-\\><C-N>:CursorAgent<CR>", t_opts)
+

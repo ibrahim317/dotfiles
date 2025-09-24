@@ -1,7 +1,7 @@
 return {
 	{
-		"ibrahim317/dired.nvim",
-		branch = "staging",
+        "ibrahim317/dired.nvim",
+        branch = "staging",
 		dependencies = { "MunifTanjim/nui.nvim" },
 		config = function()
 			require("dired").setup({
